@@ -10,15 +10,14 @@ contract MyTokenScript is Script {
     function setUp() public {}
 
     function deploy() public {
-        vm.startBroadcast();
+        vm.startBroadcast(); 
          {
              MyFirstToken token = new MyFirstToken("MyFirstToken","MFT");
              console.log("Token address:" , address(token));
              console.log("Token name:" , token.name());
              console.log("Token symbol:" , token.symbol());
-            //  transfer 1000 tokens to alice 
-            address alice = makeAddr("alice");
-            token.transfer(alice,1000);
+             address alice = makeAddr("alice");
+             token.transfer(alice,1000);    
          }
         
 
